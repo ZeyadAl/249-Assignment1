@@ -1,0 +1,19 @@
+Files:
+
+README.md: has the report
+AhoCorasick.py: has helper functions
+1.py: code for Task 1
+blast.py: code for running blast
+2.py, 2.2.py, 2.3.py: code for Task 2
+KRAKEN: directory has the code for Task 3
+    KRAKEN/run.py: for running Kraken2
+    KRAKEN/reports/read.py: has the code for classifying based on data from the report
+
+reads, reads_ungz: directories having the reads
+text: directory having the patterns
+  
+docs.txt: this file
+
+
+How to run:
+You can run the python files directly, just make sure you are using the correct reads file.
