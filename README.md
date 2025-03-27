@@ -328,12 +328,13 @@ Lineage: ['Phascolarctobacterium', 'Acidaminococcaceae', 'Acidaminococcales', 'N
 
 SRR21907332: Severe acute respiratory syndrome-related coronavirus (91.02%)
 Lineage: ['Phascolarctobacterium', 'Acidaminococcaceae', 'Acidaminococcales', 'Negativicutes', 'Bacillota', 'Bacteria']
-
+```
 
 We could make this more automated than it already is, by embedding the lineage into a vector space, then doing 2NN clustring algorithm
 Also, Phascolarctobacterium is found abundantly in the human gastrointestinal tract so this is consistent with the environments we found them in
-```
 
+
+The results for Miseq:
 ```
 
 SRR11412973: Phascolarctobacterium faecium (6.13%)
