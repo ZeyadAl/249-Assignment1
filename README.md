@@ -293,6 +293,8 @@ we see that they all belong to Phascolarctobacterium Genus
 but five of them are Severe acute respiratory syndrome-related coronavirus
 so that would the first class, and the second class will be the rest
 
+```
+
 SRR11412973: Phascolarctobacterium faecium (6.13%)
 Lineage: ['Phascolarctobacterium', 'Acidaminococcaceae', 'Acidaminococcales', 'Negativicutes', 'Bacillota', 'Bacteria']
 
@@ -326,6 +328,9 @@ Lineage: ['Phascolarctobacterium', 'Acidaminococcaceae', 'Acidaminococcales', 'N
 
 We could make this more automated than it already is, by embedding the lineage into a vector space, then doing 2NN clustring algorithm
 Also, Phascolarctobacterium is found abundantly in the human gastrointestinal tract so this is consistent with the environments we found them in
+```
+
+```
 
 SRR11412973: Phascolarctobacterium faecium (6.13%)
 Lineage: ['Phascolarctobacterium', 'Acidaminococcaceae', 'Acidaminococcales', 'Negativicutes', 'Bacillota', 'Bacteria']
@@ -355,3 +360,5 @@ SRR21907330: Unclassified
 
 SRR21907332: Severe acute respiratory syndrome-related coronavirus (91.02%)
 Lineage: ['Phascolarctobacterium', 'Acidaminococcaceae', 'Acidaminococcales', 'Negativicutes', 'Bacillota', 'Bacteria']
+```
+
