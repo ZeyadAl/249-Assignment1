@@ -14,6 +14,7 @@ We implemented the Aho-Corasick algorithm in file called 1.py where we just need
 
 Results:
 For no errors:
+```
                 matches  (ratio)
 E. coli:        3289     (32.89%)
 
@@ -24,9 +25,9 @@ P. aeruginosa:   512     (5.12%)
 S. aureus:       520     (5.2%)
 
 M. tuberculosis: 571     (5.71%)
-
+```
 For miseq:
-
+```
 E. coli:        2750    (27.5%)
 
 B. subtilis:     454    (4.54%)
@@ -36,6 +37,7 @@ P. aeruginosa:   432    (4.32%)
 S. aureus:       464    (4.64%)
 
 M. tuberculosis: 445    (4.45%)
+```
 ### Task 1.3: Approximate Matching
 Not implemented 
 
@@ -55,6 +57,7 @@ BLAST: time: 55.7s, peak memory: 142MB
 
 BLAST results:
 For no errors:
+```
                   matches  (ratio)
 E. col:             3321   (33.21%)
 
@@ -65,9 +68,9 @@ P. aeruginosa:       515   (5.15%)
 S. aureus:           523   (5.23%)
 
 M. tuberculosis:     574   (5.74%)
-
+```
 For miseq:
-
+```
 E. col:             1878   (18.78%)
 
 B. subtilis:         304   (3.04%)
@@ -77,7 +80,7 @@ P. aeruginosa:       283   (2.83%)
 S. aureus:           334   (3.34%)
 
 M. tuberculosis:     278   (2.78%)
-
+```
 For the no errors reads, the differences in results is due to having up-to one mismatch from BLAST. I looked into exact matching and we get the same exact results.
 As for the miseq reads, there's a stark difference. This is because BLAST depends on MSP scores and local alignment, so it's not really checking for exact matches, so this will lead to discrepancies. Also another reason is being that we are checking for up-to-one mismatches, we'd think this will give us a higher number of matches.
 
@@ -106,6 +109,7 @@ The actual genomes have a finite length, which means that only a very small subs
 
 • Output the number of matching reads (k-mers) for each organism
 For no error reads:
+```
 E. col:         322,046 (6.94%)
 
 B. subtilis:     53,679 (1.22%)
@@ -115,9 +119,9 @@ P. aeruginosa:   51,157 (1.21%)
 S. aureus:       51,810 (1.84%)
 
 M. tuberculosis: 55,683 (0.89%)
-
+```
 Miseq:
-
+```
 E. col:          725,334 (15.63%)
 
 B. subtilis:     123,839 (2.94%)
@@ -127,7 +131,7 @@ P. aeruginosa:   114,528 (2.6%)
 S. aureus:       123,260 (1.97%)
 
 M. tuberculosis: 119,539 (4.24%)
-
+```
 • Is the ratio identical to the approach based on string matching? Explain any discrepancy (if any):
 
 No, it's not. The reason is that the kmers are a lot, so this increases the denominator, but the matches are relitavly few so the numerator doesn't increase much. Especially that we have the number of unique kmers is 99% of the total kmers we have.
@@ -150,7 +154,7 @@ reduction in memory by 71.35% and 77.77%
 
 
 No error:
-
+```
 E. col:          263,648 (5.68%) (Accuracy: 5.68%  / 6.94%  = 81.84%)
 
 B. subtilis:     44,107  (0.99%) (Accuracy: 0.99%  / 1.22%  = 81.15%)
@@ -160,10 +164,10 @@ P. aeruginosa:   43,648  (1.05%) (Accuracy: 1.05%  / 1.21%  = 86.78%)
 S. aureus:       44,513  (1.5%)  (Accuracy: 1.5%   / 1.84%  = 81.52%)
 
 M. tuberculosis: 43,741  (0.70%) (Accuracy: 0.70%  / 0.89%  = 78.65%)
-
+```
 
 Miseq:
-
+```
 E. col:          646,036 (13.92%) (Accuracy = 13.92% / 15.63% = 89.06%)
 
 B. subtilis:     106,548 (2.53%)  (Accuracy = 2.53%  / 2.94%  = 86.05%)
@@ -173,7 +177,7 @@ P. aeruginosa:   107,686 (2.44%)  (Accuracy = 2.44%  / 2.6%   = 93.85%)
 S. aureus:       112,879 (1.8%)   (Accuracy = 1.8%   / 1.97%  = 91.37%)
 
 M. tuberculosis: 105,908 (3.75%)  (Accuracy = 3.75%  / 4.24%  = 88.44%)
-
+```
 # 3
 
 ## 3.1
@@ -197,7 +201,7 @@ Analyze difference in terms of:
 Kraken2:
 
 No error:
-
+```
 E. coli:         5983     (59.83%)
 
 B. subtilis:      999     (9.9%)
@@ -207,9 +211,9 @@ P. aeruginosa:   1000     (10%)
 S. aureus:       1000     (10%)
 
 M. tuberculosis: 1000     (10%)
-
+```
 Miseq:
-
+```
 E. coli:         5984     (59.84%)
 
 B. subtilis:     1000     (10%)
@@ -219,7 +223,7 @@ P. aeruginosa:   1000     (10%)
 S. aureus:       1000     (10%)
 
 M. tuberculosis: 1000     (10%)
-
+```
 • Classification speed and resource usage
 Kraken2: 
 
@@ -266,7 +270,7 @@ kraken2 --db /path/to/kraken2_db/standard-8 \
 
 
 Then we read the reports to classify the samples
-
+```
 SRR11412973: Phascolarctobacterium faecium (6.13%)
 
 SRR11412976: Phocaeicola vulgatus (16.14%)
@@ -286,7 +290,7 @@ SRR21907307: Severe acute respiratory syndrome-related coronavirus (41.33%)
 SRR21907330: Severe acute respiratory syndrome-related coronavirus (84.25%)
 
 SRR21907332: Severe acute respiratory syndrome-related coronavirus (91.02%)
-
+```
 
 As for the data driven-driven way to seperate the samples, we find the lineage for each species
 we see that they all belong to Phascolarctobacterium Genus
